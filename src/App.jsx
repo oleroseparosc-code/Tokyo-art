@@ -11,10 +11,7 @@ import {
   Palette,
   Plane,
   Route,
-  ShieldCheck,
-  Ticket,
   Utensils,
-  Users,
 } from "lucide-react";
 
 const mapTo = (destination) =>
@@ -539,25 +536,6 @@ const itinerary = {
   ],
 };
 
-const tripInfo = [
-  {
-    icon: <Users className="h-4 w-4 text-slate-600" />,
-    label: "최대 26명",
-  },
-  {
-    icon: <Bus className="h-4 w-4 text-slate-600" />,
-    label: "45인승 대형버스 4일",
-  },
-  {
-    icon: <ShieldCheck className="h-4 w-4 text-slate-600" />,
-    label: "NO쇼핑 · NO옵션 · 1억원 여행자보험",
-  },
-  {
-    icon: <Ticket className="h-4 w-4 text-slate-600" />,
-    label: "공연 S석 + 미술관 5곳 포함",
-  },
-];
-
 const renderIcon = (type) => {
   switch (type) {
     case "flight":
@@ -789,20 +767,6 @@ const App = () => {
           공연, 미술관, 숙소, 자유시간 대안 루트
         </p>
       </header>
-
-      <section className="grid grid-cols-2 gap-2 bg-white p-3">
-        {tripInfo.map((info) => (
-          <div
-            key={info.label}
-            className="flex items-center gap-2 rounded-lg border border-slate-100 bg-slate-50 p-2"
-          >
-            {info.icon}
-            <span className="text-[10px] font-bold leading-snug text-slate-700">
-              {info.label}
-            </span>
-          </div>
-        ))}
-      </section>
 
       <div className="sticky top-[86px] z-40 flex bg-white shadow-sm">
         {[1, 2, 3, 4].map((day) => (

@@ -34,8 +34,12 @@ assert.equal(packageJson.scripts.build, "vite build");
   "호텔 메트로폴리탄 이케부쿠로 트윈",
   "텐세이엔",
   "카루이자와 프린스 호텔 웨스트 트윈",
+  "최대 26명",
+  "45인승 대형버스 4일",
+  "NO쇼핑 · NO옵션 · 1억원 여행자보험",
+  "공연 S석 + 미술관 5곳 포함",
 ].forEach((text) => {
-  assert.ok(!app.includes(text), `App.jsx should not include old hotel ${text}`);
+  assert.ok(!app.includes(text), `App.jsx should not include ${text}`);
 });
 
 console.log("app content checks passed");
