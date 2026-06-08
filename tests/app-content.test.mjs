@@ -11,6 +11,12 @@ assert.equal(packageJson.scripts.build, "vite build");
 
 [
   "임윤찬 x 도쿄 아트 투어",
+  "차순 010-5663-5153",
+  "카톡",
+  "http://pf.kakao.com/_gIxlNb",
+  "참고 사이트",
+  "일정",
+  "https://tokyo2026061102.vercel.app/",
   "우에노모리 미술관",
   "가마쿠라 수국사",
   "하라뮤지엄 ARC",

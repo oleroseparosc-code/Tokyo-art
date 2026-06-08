@@ -766,6 +766,31 @@ const App = () => {
         <p className="mt-1 text-xs text-slate-300">
           공연, 미술관, 숙소, 자유시간 대안 루트
         </p>
+        <div className="mt-3 space-y-1 rounded-lg border border-slate-700 bg-slate-800/70 p-3 text-xs leading-relaxed text-slate-100">
+          <p className="font-bold">차순 010-5663-5153</p>
+          <p>
+            카톡{" "}
+            <a
+              href="http://pf.kakao.com/_gIxlNb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-sky-200 underline decoration-sky-400/60 underline-offset-2"
+            >
+              http://pf.kakao.com/_gIxlNb
+            </a>
+          </p>
+          <p>
+            참고 사이트 일정{" "}
+            <a
+              href="https://tokyo2026061102.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-sky-200 underline decoration-sky-400/60 underline-offset-2"
+            >
+              https://tokyo2026061102.vercel.app/
+            </a>
+          </p>
+        </div>
       </header>
 
       <div className="sticky top-[86px] z-40 flex bg-white shadow-sm">
