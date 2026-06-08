@@ -128,7 +128,7 @@ const artDetails = {
     },
     works: [
       {
-        title: "Reclining Figure 계열",
+        title: "누워 있는 인물 연작",
         artist: "헨리 무어",
         workLink:
           "https://www.hakone-oam.or.jp/en/permanentexhibits/henrymoorecollection",
@@ -155,13 +155,13 @@ const artDetails = {
       "폭포 그림의 여백, 흘러내리는 안료, 빛의 반사가 실제 물소리처럼 느껴지는 순간에 집중합니다.",
     ],
     exhibition: {
-      title: "히로시 센주 컬렉션: Waterfall",
+        title: "히로시 센주 컬렉션: 폭포",
       desc: "가루이자와의 자연 속에서 센주의 대표 폭포 연작을 만나는 미술관입니다.",
       link: "https://www.senju-museum.jp/en/exhibition/",
     },
     works: [
       {
-        title: "Waterfall",
+          title: "폭포",
         artist: "히로시 센주",
         workLink: "https://www.senju-museum.jp/en/exhibition/",
         artistLink: "https://en.wikipedia.org/wiki/Hiroshi_Senju",
@@ -182,7 +182,7 @@ const artDetails = {
     },
     works: [
       {
-        title: "Campbell's Soup Cans",
+        title: "캠벨 수프 캔",
         artist: "앤디 워홀",
         workLink: "https://www.moma.org/collection/works/79809",
         artistLink:
@@ -191,7 +191,7 @@ const artDetails = {
           "대중 소비 이미지를 예술의 전면에 올린 팝아트 대표작입니다. 하라뮤지엄 ARC에서는 현대미술 컬렉션을 읽는 기준점으로 삼기 좋습니다.",
       },
       {
-        title: "Infinity Mirror Room 계열",
+        title: "무한 거울방 연작",
         artist: "구사마 야요이",
         workLink:
           "https://www.tate.org.uk/art/artworks/kusama-infinity-mirrored-room-filled-with-the-brilliance-of-life-t13733",
@@ -206,7 +206,7 @@ const artDetails = {
 
 const restaurants = [
   {
-    name: "국립서양미술관 1층 레스토랑 Cafe Suiren",
+    name: "국립서양미술관 1층 레스토랑 카페 스이렌",
     menu: "르 꼬르비쥐에 세트",
     desc: "국립서양미술관 관람 전후 가장 동선이 짧은 식사 후보입니다.",
     mapLink: mapTo("Cafe Suiren National Museum of Western Art Tokyo"),
@@ -321,7 +321,14 @@ const itinerary = {
       type: "flight",
       time: "09:45 - 12:15",
       title: "인천(ICN) → 나리타(NRT)",
-      desc: "제주항공 7C1175편. 11JUN26(목) 09:45 → 12:15, 서울 ICN 터미널 1 출발 → 도쿄 NRT 터미널 3 도착. 예약번호 H6BDFY, JEJU AIR 운항. 항공 지연 가능성을 고려해 1일차 점심과 저녁은 자유식으로 운영합니다.",
+      desc: "항공 지연 가능성을 고려해 1일차 점심과 저녁은 자유식으로 운영합니다.",
+      flightDetails: [
+        { label: "항공편", value: "제주항공 7C1175" },
+        { label: "시간", value: "11JUN26(목) 09:45 → 12:15" },
+        { label: "출발", value: "11JUN26(목) 09:45 · 서울 ICN 터미널 1" },
+        { label: "도착", value: "11JUN26(목) 12:15 · 도쿄 NRT 터미널 3" },
+        { label: "운항", value: "제주항공" },
+      ],
       mapLink: mapTo("Narita International Airport"),
     },
     {
@@ -448,10 +455,30 @@ const itinerary = {
     {
       id: "d3-art",
       type: "art",
-      title: "하코네 오픈에어 뮤지엄: 조각의 숲",
+      title: "하코네 조각의 숲 미술관",
       desc: "폴라 미술관 휴무 기간 대체 일정. 야외 조각과 피카소관 중심으로 관람합니다.",
       mapLink: mapTo("Hakone Open-Air Museum"),
       siteLink: "https://www.hakone-oam.or.jp/",
+      links: [
+        {
+          label: "하코네 조각의 숲 미술관 바로가기",
+          href: "https://www.hakone-oam.or.jp/",
+        },
+      ],
+      landmarks: [
+        {
+          name: "심포닉 스컬프처",
+          mapLink: mapTo("Symphonic Sculpture Hakone Open-Air Museum"),
+        },
+        {
+          name: "피카소관",
+          mapLink: mapTo("Picasso Pavilion Hakone Open-Air Museum"),
+        },
+        {
+          name: "행복을 부르는 심포니 조각",
+          mapLink: mapTo("Sculpture of Symphonic Happiness Hakone Open-Air Museum"),
+        },
+      ],
       ...artDetails.hakone,
     },
     {
@@ -532,7 +559,14 @@ const itinerary = {
       type: "flight",
       time: "18:30 - 21:20",
       title: "나리타 국제공항 출발",
-      desc: "제주항공 7C1108편. 14JUN26(일) 18:30 → 21:20, 도쿄 NRT 터미널 3 출발 → 서울 ICN 터미널 1 도착. 예약번호 H6BDFY, JEJU AIR 운항. 귀국 항공편 터미널과 집결 시간을 현장에서 최종 확인합니다.",
+      desc: "귀국 항공편 터미널과 집결 시간을 현장에서 최종 확인합니다.",
+      flightDetails: [
+        { label: "항공편", value: "제주항공 7C1108" },
+        { label: "시간", value: "14JUN26(일) 18:30 → 21:20" },
+        { label: "출발", value: "14JUN26(일) 18:30 · 도쿄 NRT 터미널 3" },
+        { label: "도착", value: "14JUN26(일) 21:20 · 서울 ICN 터미널 1" },
+        { label: "운항", value: "제주항공" },
+      ],
       mapLink: mapTo("Narita International Airport"),
     },
   ],
@@ -717,6 +751,70 @@ const RestaurantInfo = ({ restaurants: items }) => (
   </div>
 );
 
+const FlightInfo = ({ details }) => (
+  <div className="mt-3 grid gap-2">
+    {details.map((detail) => (
+      <div
+        key={`${detail.label}-${detail.value}`}
+        className="rounded-lg border border-blue-100 bg-blue-50 p-3"
+      >
+        <p className="text-[10px] font-bold text-blue-700">{detail.label}</p>
+        <p className="text-[11px] font-bold leading-relaxed text-slate-800">
+          {detail.value}
+        </p>
+      </div>
+    ))}
+  </div>
+);
+
+const LinkList = ({ title, links }) => {
+  if (!links?.length) return null;
+
+  return (
+    <div className="mt-3 rounded-lg border border-indigo-100 bg-indigo-50 p-3">
+      <p className="mb-2 text-[10px] font-bold text-indigo-900">{title}</p>
+      <div className="flex flex-wrap gap-2">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded border border-indigo-200 bg-white px-2 py-1 text-[10px] font-bold text-indigo-700 underline decoration-indigo-200 underline-offset-2"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const LandmarkLinks = ({ landmarks }) => {
+  if (!landmarks?.length) return null;
+
+  return (
+    <div className="mt-3 rounded-lg border border-emerald-100 bg-emerald-50 p-3">
+      <p className="mb-2 text-[10px] font-bold text-emerald-900">
+        랜드마크 조각 길찾기
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {landmarks.map((landmark) => (
+          <a
+            key={landmark.name}
+            href={landmark.mapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded border border-emerald-200 bg-white px-2 py-1 text-[10px] font-bold text-emerald-700 underline decoration-emerald-200 underline-offset-2"
+          >
+            {landmark.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const ProgramInfo = ({ program }) => (
   <div className="mt-3 space-y-2">
     {program.map((item) => (
@@ -770,7 +868,10 @@ const EventCard = ({ event }) => (
 
     <p className="text-xs leading-relaxed text-slate-600">{event.desc}</p>
 
+    {event.flightDetails && <FlightInfo details={event.flightDetails} />}
+    {event.links && <LinkList title="바로가기" links={event.links} />}
     {event.type === "art" && <ArtInfo item={event} />}
+    {event.landmarks && <LandmarkLinks landmarks={event.landmarks} />}
     {event.type === "route" && <RouteInfo routes={event.routes} />}
     {event.restaurants && <RestaurantInfo restaurants={event.restaurants} />}
     {event.points && event.type !== "art" && (
@@ -784,8 +885,8 @@ const App = () => {
   const [activeTab, setActiveTab] = useState("1");
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-md flex-col bg-slate-50 pb-24 font-sans shadow-xl">
-      <header className="sticky top-0 z-50 bg-slate-900 p-5 text-white shadow-md">
+    <div className="mx-auto flex h-screen max-w-md flex-col overflow-hidden bg-slate-50 font-sans shadow-xl">
+      <header className="shrink-0 bg-slate-900 p-5 text-white shadow-md">
         <h1 className="text-xl font-bold">임윤찬 x 도쿄 아트 투어</h1>
         <p className="mt-1 text-xs text-slate-300">
           공연, 미술관, 숙소, 자유시간 대안 루트
@@ -817,7 +918,7 @@ const App = () => {
         </div>
       </header>
 
-      <div className="sticky top-[86px] z-40 flex bg-white shadow-sm">
+      <div className="z-40 flex shrink-0 bg-white shadow-sm">
         {[1, 2, 3, 4].map((day) => (
           <button
             key={day}
@@ -833,7 +934,8 @@ const App = () => {
         ))}
       </div>
 
-      <div className="space-y-4 p-4">
+      <div className="flex-1 overflow-y-auto p-4 pb-24">
+        <div className="space-y-4">
         <div className="rounded-lg border border-slate-200 bg-white p-3">
           <div className="flex items-start gap-2">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
@@ -848,6 +950,7 @@ const App = () => {
         {itinerary[activeTab].map((event) => (
           <EventCard key={event.id} event={event} />
         ))}
+        </div>
       </div>
     </div>
   );
