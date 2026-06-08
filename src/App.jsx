@@ -321,7 +321,7 @@ const itinerary = {
       type: "flight",
       time: "09:45 - 12:15",
       title: "인천(ICN) → 나리타(NRT)",
-      desc: "제주항공 7C1175편. 항공 지연 가능성을 고려해 1일차 점심과 저녁은 자유식으로 운영합니다.",
+      desc: "제주항공 7C1175편. 11JUN26(목) 09:45 → 12:15, 서울 ICN 터미널 1 출발 → 도쿄 NRT 터미널 3 도착. 예약번호 H6BDFY, JEJU AIR 운항. 항공 지연 가능성을 고려해 1일차 점심과 저녁은 자유식으로 운영합니다.",
       mapLink: mapTo("Narita International Airport"),
     },
     {
@@ -357,6 +357,7 @@ const itinerary = {
       points: [
         "전날 이동과 전시 후 공연이므로 물, 간단한 간식, 얇은 겉옷을 준비하면 좋습니다.",
         "모차르트 협주곡은 피아노와 오케스트라가 주고받는 대화처럼 들으면 훨씬 선명합니다.",
+        "공연 참고 링크: https://m.blog.naver.com/leggiero7/224287257656",
       ],
       program: [
         {
@@ -529,8 +530,9 @@ const itinerary = {
     {
       id: "d4-flight",
       type: "flight",
+      time: "18:30 - 21:20",
       title: "나리타 국제공항 출발",
-      desc: "귀국 항공편 터미널과 집결 시간을 현장에서 최종 확인합니다.",
+      desc: "제주항공 7C1108편. 14JUN26(일) 18:30 → 21:20, 도쿄 NRT 터미널 3 출발 → 서울 ICN 터미널 1 도착. 예약번호 H6BDFY, JEJU AIR 운항. 귀국 항공편 터미널과 집결 시간을 현장에서 최종 확인합니다.",
       mapLink: mapTo("Narita International Airport"),
     },
   ],
@@ -586,6 +588,28 @@ const DetailLink = ({ href, children }) => (
   </a>
 );
 
+const LinkedText = ({ text }) => {
+  const urlPattern = /(https?:\/\/\S+)/g;
+  const urlOnlyPattern = /^https?:\/\/\S+$/;
+  const parts = text.split(urlPattern);
+
+  return parts.map((part, idx) =>
+    urlOnlyPattern.test(part) ? (
+      <a
+        key={idx}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-bold text-indigo-700 underline decoration-indigo-200 underline-offset-2"
+      >
+        {part}
+      </a>
+    ) : (
+      <React.Fragment key={idx}>{part}</React.Fragment>
+    ),
+  );
+};
+
 const ListBlock = ({ title, items, tone = "purple" }) => {
   if (!items?.length) return null;
   const toneClass =
@@ -599,7 +623,7 @@ const ListBlock = ({ title, items, tone = "purple" }) => {
       <ul className="space-y-1">
         {items.map((item, idx) => (
           <li key={idx} className="text-[10px] leading-relaxed">
-            - {item}
+            - <LinkedText text={item} />
           </li>
         ))}
       </ul>
