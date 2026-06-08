@@ -2,6 +2,10 @@ import { execFileSync } from "node:child_process";
 
 const run = (command, args) => {
   console.log(`\n> ${command} ${args.join(" ")}`);
+  if (command === "npm.cmd") {
+    execFileSync("cmd.exe", ["/c", command, ...args], { stdio: "inherit" });
+    return;
+  }
   execFileSync(command, args, { stdio: "inherit" });
 };
 
