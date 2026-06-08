@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
+    "publish": "node scripts/publish-update.mjs",
     "test": "node tests/app-content.test.mjs && node tests/github-pages.test.mjs"
   },
   "dependencies": {
