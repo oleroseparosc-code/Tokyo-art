@@ -329,6 +329,26 @@ const itinerary = {
         { label: "도착", value: "11JUN26(목) 12:15 · 도쿄 NRT 터미널 3" },
         { label: "운항", value: "제주항공" },
       ],
+      meetingInfo: [
+        {
+          title: "인천 공항 미팅 장소 및 시간",
+          items: [
+            "1차 : 오전 7시 제주항공 체크인 카운터앞",
+            "2차 : 보딩 전 gate 앞",
+          ],
+        },
+        {
+          title: "나리타 공항 미팅 장소 및 시간",
+          items: [
+            "1차 : 12시 15분 도착 제주항공 수화물 찾는 곳",
+            "2차 : 나리타 공항 2터미널",
+          ],
+        },
+        {
+          title: "우에노 모리 미술관 앞",
+          items: ["시간 추후 카톡방 안내"],
+        },
+      ],
       mapLink: mapTo("Narita International Airport"),
     },
     {
@@ -767,6 +787,37 @@ const FlightInfo = ({ details }) => (
   </div>
 );
 
+const MeetingInfo = ({ sections }) => {
+  if (!sections?.length) return null;
+
+  return (
+    <div className="mt-3 rounded-lg border border-cyan-100 bg-cyan-50 p-3">
+      <p className="mb-2 text-[10px] font-bold text-cyan-900">
+        미팅 장소 및 시간
+      </p>
+      <div className="space-y-3">
+        {sections.map((section) => (
+          <div key={section.title}>
+            <p className="text-[11px] font-bold text-slate-800">
+              {section.title}
+            </p>
+            <ul className="mt-1 space-y-1">
+              {section.items.map((item) => (
+                <li
+                  key={item}
+                  className="text-[10px] leading-relaxed text-slate-600"
+                >
+                  - {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const LinkList = ({ title, links }) => {
   if (!links?.length) return null;
 
@@ -869,6 +920,7 @@ const EventCard = ({ event }) => (
     <p className="text-xs leading-relaxed text-slate-600">{event.desc}</p>
 
     {event.flightDetails && <FlightInfo details={event.flightDetails} />}
+    {event.meetingInfo && <MeetingInfo sections={event.meetingInfo} />}
     {event.links && <LinkList title="바로가기" links={event.links} />}
     {event.type === "art" && <ArtInfo item={event} />}
     {event.landmarks && <LandmarkLinks landmarks={event.landmarks} />}
