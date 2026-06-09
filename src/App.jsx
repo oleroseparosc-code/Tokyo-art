@@ -297,6 +297,8 @@ const dayOneRoutes = [
     flow: "우에노모리 미술관 → 국립서양미술관 → Cafe Suiren 식사 → 18:00 재집결",
     bestFor: "호쿠사이, 모네, 로댕, 건축까지 함께 보고 싶은 경우",
     note: "두 미술관이 가까워 도보 이동 부담이 낮습니다. 관람 시간이 부족하면 상설전 일부만 봅니다.",
+    mapLink: mapTo("National Museum of Western Art Tokyo"),
+    siteLink: "https://www.nmwa.go.jp/",
     art: artDetails.nmwa,
   },
   {
@@ -304,6 +306,8 @@ const dayOneRoutes = [
     flow: "우에노모리 미술관 → 도쿄도미술관 → 2층 레스토랑 오므라이스 → 18:00 재집결",
     bestFor: "앤드루 와이어스 특별전을 우선하고 싶은 경우",
     note: "도쿄도미술관도 우에노 공원 안에 있어 현장 예매 후 유연하게 보기 좋습니다.",
+    mapLink: mapTo("Tokyo Metropolitan Art Museum"),
+    siteLink: "https://www.tobikan.jp/",
     art: artDetails.tobikan,
   },
   {
@@ -726,7 +730,17 @@ const RouteInfo = ({ routes }) => (
   <div className="mt-3 space-y-3">
     {routes.map((route) => (
       <div key={route.name} className="rounded-lg border border-slate-200 p-3">
-        <p className="text-xs font-bold text-slate-800">{route.name}</p>
+        <div className="flex items-start justify-between gap-2">
+          <p className="text-xs font-bold text-slate-800">{route.name}</p>
+          <div className="flex shrink-0 gap-1">
+            {route.mapLink && (
+              <IconLink href={route.mapLink} type="map" label="길찾기" />
+            )}
+            {route.siteLink && (
+              <IconLink href={route.siteLink} label="미술관 홈페이지" />
+            )}
+          </div>
+        </div>
         <p className="mt-1 text-[10px] font-bold text-emerald-700">
           {route.flow}
         </p>
