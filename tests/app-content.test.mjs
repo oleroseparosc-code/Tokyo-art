@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, statSync } from "node:fs";
 
 const app = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8");
 const packageJson = JSON.parse(
@@ -25,7 +25,8 @@ assert.equal(packageJson.scripts.build, "vite build");
   "14JUN26(일) 18:30 → 21:20",
   "출발",
   "도착",
-  "하코네 조각의 숲 미술관 바로가기",
+  "하코네 야외 조각 공원 PDF 지도 크게 보기",
+  "hakone-open-air-map.pdf",
   "랜드마크 조각 길찾기",
   "누워 있는 인물 연작",
   "폭포",
@@ -62,6 +63,7 @@ assert.equal(packageJson.scripts.build, "vite build");
   "45인승 대형버스 4일",
   "NO쇼핑 · NO옵션 · 1억원 여행자보험",
   "공연 S석 + 미술관 5곳 포함",
+  "하코네 조각의 숲 미술관 바로가기",
   "H6BDFY",
   "Reclining Figure 계열",
   "Waterfall",
@@ -79,5 +81,10 @@ assert.ok(
   app.includes("flex-1 overflow-y-auto"),
   "Scrollable content area should use flex-1 overflow-y-auto",
 );
+
+const hakonePdf = statSync(
+  new URL("../public/hakone-open-air-map.pdf", import.meta.url),
+);
+assert.ok(hakonePdf.size > 1_000_000, "Hakone PDF map should be bundled as a public asset");
 
 console.log("app content checks passed");

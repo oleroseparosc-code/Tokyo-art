@@ -461,8 +461,8 @@ const itinerary = {
       siteLink: "https://www.hakone-oam.or.jp/",
       links: [
         {
-          label: "하코네 조각의 숲 미술관 바로가기",
-          href: "https://www.hakone-oam.or.jp/",
+          label: "하코네 야외 조각 공원 PDF 지도 크게 보기",
+          href: "./hakone-open-air-map.pdf",
         },
       ],
       landmarks: [
